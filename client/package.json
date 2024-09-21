@@ -1,7 +1,6 @@
 {
   "name": "blogapp",
   "private": true,
-  "proxy":"https://blogg-xs4m.onrender.com",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
