@@ -45,7 +45,11 @@ const login = async (req, res) => {
     const payload = { id: user._id, email: user.email };
     jwt.sign(payload, process.env.JWT_SECRET, {}, (err, token) => {
       if (err) throw err;
-      res.cookie("token", token, {}).json({ id: user._id, email: user.email });
+      res.cookie("token", token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "strict",
+      }).json({ id: user._id, email: user.email });
     });
   } catch (error) {
     res.status(500).json({ msg: "Server error" });
