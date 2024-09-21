@@ -33,7 +33,7 @@ const Header = () => {
   }
 
   const performLogout = () => {
-    fetch('http://localhost:3000/auth/logout', {
+    fetch('https://blogg-xs4m.onrender.com/auth/logout', {
       method: 'POST',
       credentials: 'include',
     })
@@ -54,7 +54,7 @@ const Header = () => {
   const email = userinfo?.email;
 
   useEffect(() => {
-    fetch('http://localhost:3000/auth/profile', {
+    fetch('https://blogg-xs4m.onrender.com/auth/profile', {
       method: 'GET',
       credentials: 'include',
     })
