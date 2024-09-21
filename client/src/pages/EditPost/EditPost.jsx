@@ -14,7 +14,7 @@ const EditPost = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:3000/post/" + id).then((res) => {
+    fetch("https://blogg-xs4m.onrender.com/post/" + id).then((res) => {
       res.json().then((postinfo) => {
         setTitle(postinfo.title);
         setContent(postinfo.content);
@@ -38,7 +38,7 @@ const EditPost = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/post", {
+      const response = await fetch("https://blogg-xs4m.onrender.com/post", {
         method: "PUT",
         body: data,
         credentials: "include",
