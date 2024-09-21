@@ -45,25 +45,12 @@ const CreatePost = () => {
     data.set('content', content);
     data.set('file', files[0]);
 
-    // Helper function to get the token from the cookie
-  const getCookie = (name) => {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
-}
-
     
-  const token = getCookie('token'); // Get the token from the cookie
-  const headers = {
-    'Content-Type': 'multipart/form-data',
-    Authorization: `Bearer ${token}`, // Add the token to the headers
-  };
-
+ 
     try {
       const response = await fetch("https://blogg-xs4m.onrender.com/post", {
         method: 'POST',
         body: data,
-        headers: headers, 
         credentials: 'include',
       });
       if (response.ok) {
