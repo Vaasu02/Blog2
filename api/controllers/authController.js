@@ -46,10 +46,7 @@ const login = async (req, res) => {
     jwt.sign(payload, process.env.JWT_SECRET, {}, (err, token) => {
       if (err) throw err;
       res.cookie("token", token, {
-          httpOnly: true,
-          secure: true,
-          sameSite: 'none',
-          domain: 'https://bloggginghubb.onrender.com' 
+        same_site:"none"
       }).json({ id: user._id, email: user.email });
     });
   } catch (error) {
