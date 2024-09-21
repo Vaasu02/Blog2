@@ -46,7 +46,9 @@ const login = async (req, res) => {
     jwt.sign(payload, process.env.JWT_SECRET, {}, (err, token) => {
       if (err) throw err;
       res.cookie("token", token, {
-        same_site:"none"
+        secure:true,
+        httpOnly:false,
+        sameSite:"none"
       }).json({ id: user._id, email: user.email });
     });
   } catch (error) {
