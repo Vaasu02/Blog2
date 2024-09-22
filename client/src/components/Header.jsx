@@ -40,7 +40,10 @@ const Header = () => {
       .then(response => response.json())
       .then(data => {
         setUserinfo(null);
-        toast.success("Logged out successfully");
+        const toastId = toast.success("Logged out successfully");
+        setTimeout(() => {
+          toast.dismiss(toastId);
+        }, 2000);
         setTimeout(() => {
           navigate('/login')
         }, 1000)
