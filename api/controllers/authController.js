@@ -48,7 +48,8 @@ const login = async (req, res) => {
       res.cookie("token", token, {
         secure:true,
         httpOnly:false,
-        sameSite:"none"
+        sameSite:"none",
+        maxAge: 3600000
       }).json({ id: user._id, email: user.email });
     });
   } catch (error) {
