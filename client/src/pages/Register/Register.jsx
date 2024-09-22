@@ -37,7 +37,10 @@ const Register = () => {
       });
 
       if (response.ok) {
-        toast.success("Registration successful");
+        const toastId = toast.success("Registration successful");
+        setTimeout(() => {
+          toast.dismiss(toastId);
+        }, 2000);
         setTimeout(() => {
           navigate('/login');
         }, 1000);
