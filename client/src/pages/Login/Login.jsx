@@ -30,7 +30,10 @@ const Login = () => {
       } else {
         const info = await response.json();
         setUserinfo(info);
-        toast.success("Login successful");
+        const toastId = toast.success("Login successful");
+        setTimeout(() => {
+          toast.dismiss(toastId);
+        }, 2000);
 
         setTimeout(() => {
           navigate('/');
