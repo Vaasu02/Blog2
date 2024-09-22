@@ -78,6 +78,7 @@ const CreatePost = () => {
           <label className="block text-lg font-semibold text-gray-700 mb-2">Title</label>
           <input
             type="text"
+            required
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Title"
@@ -89,6 +90,7 @@ const CreatePost = () => {
           <label className="block text-lg font-semibold text-gray-700 mb-2">Summary</label>
           <input
             type="text"
+            required
             value={summary}
             onChange={handleSummaryChange}
             placeholder="Summary"
@@ -102,6 +104,7 @@ const CreatePost = () => {
           <label className="block text-lg font-semibold text-gray-700 mb-2">Upload Cover Image</label>
           <input
             type="file"
+            required
             onChange={(e) => setFiles(e.target.files)}
             className="block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
           />
