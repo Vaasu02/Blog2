@@ -26,7 +26,10 @@ const Login = () => {
 
       if (!response.ok) {
         const errorData = await response.json();
-        toast.error(`Login failed: ${errorData.msg}`);
+        const toastId = toast.error(`Login failed: ${errorData.msg}`);
+        setTimeout(() => {
+          toast.dismiss(toastId);
+        }, 2000);
       } else {
         const info = await response.json();
         setUserinfo(info);
