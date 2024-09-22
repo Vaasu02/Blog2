@@ -33,7 +33,10 @@ const SinglePostPage = () => {
               });
 
               if (response.ok) {
-                toast.success("Post deleted successfully");
+                const toastId = toast.success("Post deleted successfully");
+                setTimeout(() => {
+                  toast.dismiss(toastId);
+                }, 2000);
                 navigate("/");
               } else {
                 toast.error("Failed to delete the post.");
