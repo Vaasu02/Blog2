@@ -68,6 +68,7 @@ const EditPost = () => {
           <label className="block text-lg font-semibold text-gray-700 mb-2">Title</label>
           <input
             type="text"
+            required
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Title"
@@ -79,6 +80,7 @@ const EditPost = () => {
           <label className="block text-lg font-semibold text-gray-700 mb-2">Summary</label>
           <input
             type="text"
+            required
             value={summary}
             onChange={(e) => setSummary(e.target.value)}
             placeholder="Summary"
